@@ -1,0 +1,121 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Calculator.MainWindow"
+        Title="Calculator">
+	<Window.Styles>
+		<Style Selector="Button.btn">
+			<Setter Property="Width" Value="80"/>
+			<Setter Property="Height" Value="30"/>
+			<Setter Property="Margin" Value="0,5,0,5"/>
+		</Style>
+	</Window.Styles>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="40"/>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+		
+		<TextBlock Text="Калькулётор"
+				   FontSize="30"
+				   HorizontalAlignment="Center"/>
+
+		<StackPanel Grid.Row="1"
+					Margin="0,20,0,0"
+					Width="600"
+					HorizontalAlignment="Center"
+					VerticalAlignment="Top">
+			<TextBox Height="40"
+					 FontSize="25"
+					 TextAlignment="Right"
+					 Name="Input"/>
+			<StackPanel Orientation="Horizontal"
+						HorizontalAlignment="Center"
+						Margin="0,20,0,0">
+				<StackPanel>
+					<Button Content="C--"
+							Classes="btn"
+							Click="ClickDelete"/>
+					<Button Content="7"
+							Classes="btn"
+							Click="ClickCalc"/>
+					<Button Content="4"
+							Classes="btn"
+							Click="ClickCalc"/>
+					<Button Content="1"
+							Classes="btn"
+							Click="ClickCalc"/>
+					<Button Content="("
+							Classes="btn"
+							Click="ClickCalc"/>
+				</StackPanel>
+
+				<StackPanel Margin="20,0,20,0">
+					<Button Content="&lt;--"
+							Classes="btn"
+							Click="ClickDelete"/>
+					<Button Content="8"
+							Classes="btn"
+							Click="ClickCalc"/>
+					<Button Content="5"
+							Classes="btn"
+							Click="ClickCalc"/>
+					<Button Content="2"
+							Classes="btn"
+							Click="ClickCalc"/>
+					<Button Content=")"
+							Classes="btn"
+							Click="ClickCalc"/>
+				</StackPanel>
+
+				<StackPanel>
+					<Button Content="/"
+							Classes="btn"
+							Click="ClickCalc"/>
+					<Button Content="9"
+							Classes="btn"
+							Click="ClickCalc"/>
+					<Button Content="6"
+							Classes="btn"
+							Click="ClickCalc"/>
+					<Button Content="3"
+							Classes="btn"
+							Click="ClickCalc"/>
+					<Button Content="0"
+							Classes="btn"
+							Click="ClickCalc"/>
+				</StackPanel>
+
+				<StackPanel Margin="20,0,0,0">
+					<Button Content="*"
+							Classes="btn"
+							Click="ClickCalc"/>
+					<Button Content="-"
+							Classes="btn"
+							Click="ClickCalc"/>
+					<Button Content="+"
+							Classes="btn"
+							Click="ClickCalc"/>
+					<Button Content="="
+							Classes="btn"
+							Click="ClickStartCalcul"/>
+					<Button Content="."
+							Classes="btn"
+							Click="ClickCalc"/>
+				</StackPanel>
+			</StackPanel>
+
+			<StackPanel TextBlock.FontSize="30"
+						Orientation="Horizontal"
+						HorizontalAlignment="Center"
+						Margin="0,30,0,0">
+				<TextBlock Text="Ответ:"/>
+				<TextBlock Name="Answer"
+						   Margin="10,0,0,0"/>
+			</StackPanel>
+			
+		</StackPanel>
+	</Grid>
+</Window>
